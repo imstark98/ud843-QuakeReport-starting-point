@@ -8,14 +8,30 @@ public class Earthquake {
     // Location of the eathquake
     private String mLocation;
 
-    // Date of the earthquake
-    private String mDate;
 
-    public Earthquake(String magnitude, String location, String date)
-    {
-        mMagnitude=magnitude;
-        mLocation=location;
-        mDate=date;
+
+    /** Time of the earthquake */
+    private long mTimeInMilliseconds;
+
+    /**
+     * Constructs a new {@link Earthquake} object.
+     *
+     * @param magnitude is the magnitude (size) of the earthquake
+     * @param location is the city location of the earthquake
+     * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+     *  earthquake happened
+     */
+    public Earthquake(String magnitude, String location, long timeInMilliseconds) {
+        mMagnitude = magnitude;
+        mLocation = location;
+        mTimeInMilliseconds = timeInMilliseconds;
+    }
+
+    /**
+     * Returns the time of the earthquake.
+     */
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 
     public String getmMagnitude() {
@@ -26,7 +42,5 @@ public class Earthquake {
         return mLocation;
     }
 
-    public String getmDate() {
-        return mDate;
-    }
+
 }
